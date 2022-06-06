@@ -1,0 +1,22 @@
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    padding: 0;
+
+}
+
+.navbar {
+    border-bottom: 1px solid #3c3c3d;
+}
+
+#navbarSupportedContent .navbar-nav li {
+    margin: 0px 60px;
+}
+
+.table {
+    margin-top: 100px;
+}
+
