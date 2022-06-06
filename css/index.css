@@ -1,5 +1,18 @@
+
 * {
     box-sizing: border-box;
+}
+
+#titulo {
+    background-color: #1f1f27;
+}
+
+#titulo h1 {
+    text-align: center;
+    color: #fff;
+    font-weight: 400;
+    padding: 10px;
+   
 }
 
 .container {
@@ -18,5 +31,11 @@
 
 .table {
     margin-top: 100px;
+}
+
+
+
+.sticky-bottom .btn {
+    margin: 5px;
 }
 
