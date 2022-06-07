@@ -4,7 +4,7 @@ cadastrarProduto.addEventListener('click', () =>
 Toastify({
     text: "Produto Cadastrado Com sucesso!",
     duration: 3000,
-    destination: "https://github.com/apvarun/toastify-js",
+    // destination: "https://github.com/apvarun/toastify-js",
     newWindow: true,
     close: true,
     gravity: "bottom", // `top` or `bottom`
@@ -13,7 +13,7 @@ Toastify({
     style: {
       background: "#3c3c3d",
       color: "#fff"
-    },
+    },  
     onClick: function(){} // Callback after click
   }).showToast());
 
