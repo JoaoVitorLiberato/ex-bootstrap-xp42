@@ -1,4 +1,3 @@
-
 * {
     box-sizing: border-box;
 }
@@ -28,14 +27,3 @@
 #navbarSupportedContent .navbar-nav li {
     margin: 0px 60px;
 }
-
-.table {
-    margin-top: 100px;
-}
-
-
-
-.sticky-bottom .btn {
-    margin: 5px;
-}
-

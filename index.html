@@ -7,10 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pipoco Trovão</title>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+
+    <link rel="stylesheet" href="./assets/css/global.css">
+    <link rel="stylesheet" href="./assets/css/index.css">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="./css/index.css">
+
 </head>
 
 <body>
@@ -18,16 +25,13 @@
     <div class="container">
         <nav class="navbar navbar-expand-lg w-100 bg-gradient">
             <div class="container-fluid">
-                <a class="navbar-brand border-end p-2" href="#">PIPOCO DO TROVÃO</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                <a class="animate__animated animate__fadeInLeftBig navbar-brand border-end p-2" href="#">PIPOCO DO
+                    TROVÃO</a>
+                <link href="toastr.css" rel="stylesheet" />
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Pagina Inical</a>
+                            <a class="nav-link active" aria-current="page" href="./index.html">Pagina Inical</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Entregas</a>
@@ -47,63 +51,150 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link disabled">Logout</a>
+                            <a href="./Login.html" class="nav-link">Logout</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
-        <table class="table table-dark table-striped">
-            <thead>
-                <tr>
-                    <th scope="col">CODIGO</th>
-                    <th scope="col">NOME</th>
-                    <th scope="col">MARCA</th>
-                    <th scope="col">PREÇO</th>
-                    <th scope="col">QTD</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">0001</th>
-                    <td>NOTEBOOK</td>
-                    <td>SAMSUNG</td>
-                    <td>R$ 1.000</td>
-                    <td>50</td>
-                </tr>
-                <tr>
-                    <th scope="row">0002</th>
-                    <td>SMART TV</td>
-                    <td>LG</td>
-                    <td>R$ 5.000</td>
-                    <td>50</td>
-                </tr>
-                <tr>
-                    <th scope="row">0003</th>
-                    <td>LIQUIDIFICADOR</td>
-                    <td>MUNDIAL</td>
-                    <td>R$ 100</td>
-                    <td>50</td>
-                    
-                </tr>
-                <tr>
-                    <th scope="row">0004</th>
-                    <td>GUARDA-ROUPAS</td>
-                    <td>JINK IMÓVEIS</td> 
-                    <td>R$ 899</td>
-                    <td>50</td>       
-                </tr>
-            </tbody>
-        </table>
 
-        <div class="sticky-bottom">
-            <button class="btn btn-primary" type="submit">ADICIONAR</button>
-            <button class="btn btn-secondary" type="submit">VISUALIZAR</button>
-            <button class="btn btn-danger" type="submit">DELETAR</button>
+        <div class="row" id="Dash">
+
+            <div class="col-4">
+                <!-- Agora é apenas aqui o dash-->
+                <div class="card text-center" style="width: 18rem;">
+                    <img src="data:image/png;base64,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"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">USER</h5>
+                        <p class="card-text">Lorem ipsum dolor sit.
+                        </p>
+                        <div class="sticky-bottom">
+
+                            <button class="btn btn-primary " type="button" data-bs-toggle="offcanvas"
+                                data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Cadastrar
+                                Produto</button>
+
+                            <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false"
+                                tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+                                <div class="offcanvas-header">
+                                    <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Cadastro de Produto
+                                    </h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="offcanvas-body">
+                                    <form action="#" method="post">
+                                        <p>
+                                            <input type="number" name="id" id="id" placeholder="ID do Produto" required>
+                                        </p>
+
+                                        <p>
+                                            <input type="text" name="nome" id="nome" placeholder="Nome do Produto"
+                                                required>
+                                        </p>
+
+                                        <p>
+                                            <input type="text" name="marca" id="marca" placeholder="Marca do Produto"
+                                                required>
+                                        </p>
+
+                                        <p>
+                                            <input type="text" name="valor" id="quantidade" placeholder="Qtd de Produto"
+                                                required>
+                                        </p>
+
+                                        <p>
+                                            <input type="text" name="valor" id="valor"
+                                                placeholder="Valor do Produto R$: " required>
+                                        </p>
+
+                                        <p>
+                                            <button type="button" class="container btn btn-primary" id="btn-cadastrarP">
+                                                Cadastrar
+                                            </button>
+                                        </p>
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+            </div>
+
+            <div class="col-8">
+                <table class="table table-dark table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">CODIGO</th>
+                            <th scope="col">NOME</th>
+                            <th scope="col">MARCA</th>
+                            <th scope="col">PREÇO</th>
+                            <th scope="col">QTD</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">0001</th>
+                            <td>NOTEBOOK</td>
+                            <td>SAMSUNG</td>
+                            <td>R$ 1.000</td>
+                            <td>50</td>
+                            <td>
+                                <div class="sticky-bottom">
+                                    <button class="btn btn-secondary" type="submit">VISUALIZAR</button>
+                                    <button class="btn btn-danger" type="submit">DELETAR</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">0002</th>
+                            <td>SMART TV</td>
+                            <td>LG</td>
+                            <td>R$ 5.000</td>
+                            <td>50</td>
+                            <td>
+                                <div class="sticky-bottom">
+                                    <button class="btn btn-secondary" type="submit">VISUALIZAR</button>
+                                    <button class="btn btn-danger" type="submit">DELETAR</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">0003</th>
+                            <td>LIQUIDIFICADOR</td>
+                            <td>MUNDIAL</td>
+                            <td>R$ 100</td>
+                            <td>50</td>
+                            <td>
+                                <div class="sticky-bottom">
+                                    <button class="btn btn-secondary" type="submit">VISUALIZAR</button>
+                                    <button class="btn btn-danger" type="submit">DELETAR</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">0004</th>
+                            <td>GUARDA-ROUPAS</td>
+                            <td>JINK IMÓVEIS</td>
+                            <td>R$ 899</td>
+                            <td>50</td>
+                            <td>
+                                <div class="sticky-bottom">
+                                    <button class="btn btn-secondary" type="submit">VISUALIZAR</button>
+                                    <button class="btn btn-danger" type="submit">DELETAR</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-
     </div>
-
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
@@ -112,5 +203,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
     integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
     crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+<script src="./assets/js/index.js"></script>
 
 </html>
